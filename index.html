@@ -1,0 +1,2 @@
+<!DOCTYPE html> <html> <head> <title>File to Base64 Converter</title> <script> function handleFileSelect(event) { const file = event.target.files[0]; const reader = new FileReader(); reader.onload = function(event) { const base64 = btoa(event.target.result); const link = document.createElement('a'); link.href = 'data:text/plain;base64,' + base64; link.download = file.name + '.txt'; link.click(); }; reader.readAsDataURL(file); } </script> </head> <body> <input type="file" onchange="handleFileSelect(event)"> </body> </html>
+
